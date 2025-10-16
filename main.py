@@ -29,8 +29,6 @@ def parse_args():
             print(f'Допустимые флаги: --files, --report, --path')
             sys.exit(1)
 
-    # args = parser.parse_args()
-
     if '--files' in sys.argv:
         files_index = sys.argv.index('--files')
         if files_index + 1 >= len(sys.argv) or sys.argv[files_index + 1].startswith('--'):

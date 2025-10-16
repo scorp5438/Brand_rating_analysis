@@ -5,11 +5,11 @@ from pathlib import Path
 from product_class import Product
 
 
-def get_full_path(file_names, path):
+def get_full_path(file_names, path) -> list:
     return [Path().joinpath(path, file_name) for file_name in file_names]
 
 
-def read_file(args):
+def read_file(args) -> list:
     data_in_file = []
     for file in args:
         try:
@@ -34,7 +34,7 @@ def create_product_list(products) -> list[Product]:
     return product_list
 
 
-def get_avg_rating(product_list):
+def get_avg_rating(product_list) -> dict:
     row_data = defaultdict(list)
     for prod in product_list:
         row_data[prod.brand].append(prod.rating)
